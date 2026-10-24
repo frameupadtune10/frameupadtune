@@ -1,0 +1,93 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/*
+ * FrameupAdtune design system — "Layered botanical"
+ * Sage + soft green palette, Space Grotesk display, DM Sans body.
+ * Tokens are carried verbatim from the chosen design direction.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--card);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--paper);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--sage);
+  --color-primary-foreground: var(--paper);
+  --color-secondary: var(--sand);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--paper);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--sage);
+
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-sage: var(--sage);
+  --color-sand: var(--sand);
+}
+
+:root {
+  --radius: 1rem;
+  --paper: #f6f5f0;
+  --ink: #1f2a22;
+  --sage: #6b8f71;
+  --sand: #d9c9b8;
+  --card: #ffffff;
+  --accent: rgba(255, 255, 255, 0.6);
+  --muted: rgba(31, 42, 34, 0.08);
+  --muted-foreground: rgba(31, 42, 34, 0.6);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(31, 42, 34, 0.1);
+  --input: rgba(31, 42, 34, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.7s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
